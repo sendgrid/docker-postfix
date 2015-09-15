@@ -1,0 +1,19 @@
+# Rotate logs on the mx boxes 
+
+/var/log/syslog
+/var/log/mail.warn
+/var/log/mail.err
+/var/log/mail.log
+/var/log/mail.info
+{
+  rotate 7
+  daily
+  missingok
+  notifempty
+  compress
+  delaycompress
+  sharedscripts
+  postrotate
+    /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+  endscript
+}
