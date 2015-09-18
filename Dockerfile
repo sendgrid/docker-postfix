@@ -10,4 +10,4 @@ ADD main.cf /etc/postfix/main.cf
 ADD sg_mail /etc/logrotate.d/sg_mail
 ADD mailname /etc/mailname
 
-#RUN service postfix start
+RUN ["service" "postfix" "start"]
