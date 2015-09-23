@@ -1,13 +1,22 @@
 FROM docker.sendgrid.net/sendgrid/dev
 
-RUN yum install -y postfix
-
-WORKDIR /opt/sendgrid/postfix
+ADD master.cf /etc/postfix/master.cf
+ADD main.cf /etc/postfix/main.cf
 
 ADD master.cf /etc/postfix/master.cf
-ADD aliases /etc/aliases
 ADD main.cf /etc/postfix/main.cf
+
+RUN yum update -y && yum install -y rsyslog postfix
+
+ADD startpostfix.sh /startpostfix.sh
+
+
+
+
 ADD sg_mail /etc/logrotate.d/sg_mail
 ADD mailname /etc/mailname
+ADD aliases /etc/aliases
 
-RUN ["service" "postfix" "start"]
+VOLUME ["/var/log","/var/spool/postfix"]
+
+CMD ["/startpostfix.sh"]

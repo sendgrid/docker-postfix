@@ -7,4 +7,6 @@ docker run \
  --dns-search docker \
  --volumes-from mpide_spool_1 \
  mxpostfix \
- bash
+bash
+#bash -c ./startpostfix.sh
+
