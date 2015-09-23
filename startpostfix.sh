@@ -5,7 +5,7 @@ service rsyslog start
 service postfix start
 
 
-#while true
-#do
-#    sleep 1
-#done
+while true
+do
+    sleep 1
+done

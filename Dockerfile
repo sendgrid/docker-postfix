@@ -3,14 +3,9 @@ FROM docker.sendgrid.net/sendgrid/dev
 ADD master.cf /etc/postfix/master.cf
 ADD main.cf /etc/postfix/main.cf
 
-ADD master.cf /etc/postfix/master.cf
-ADD main.cf /etc/postfix/main.cf
-
 RUN yum update -y && yum install -y rsyslog postfix
 
 ADD startpostfix.sh /startpostfix.sh
-
-
 
 
 ADD sg_mail /etc/logrotate.d/sg_mail
@@ -19,4 +14,4 @@ ADD aliases /etc/aliases
 
 VOLUME ["/var/log","/var/spool/postfix"]
 
-CMD ["/startpostfix.sh"]
+ENTRYPOINT ["./startpostfix.sh"]

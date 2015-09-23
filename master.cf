@@ -103,7 +103,7 @@ mailman   unix  -       n       n       -       -       pipe
   flags=FR user=list argv=/usr/lib/mailman/bin/postfix-to-mailman.py
   ${nexthop} ${user}
 
-bounced    unix  -       -       n       -       20      smtp
+bounced.docker    unix  -       -       n       -       20      smtp
     -o smtp_send_xforward_command=yes
     -o smtp_discard_ehlo_keywords=8bitmime,startssl
 
