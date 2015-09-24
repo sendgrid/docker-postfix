@@ -42,7 +42,7 @@ alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
 smtpd_recipient_restrictions = permit_mynetworks, reject_unauth_destination
 # Further hostnames should be added to mail_domain table instead of here
-mydestination = localhost.docker, localhost
+mydestination = mxpostfix.docker localhost.docker docker, localhost
 relayhost =
 mynetworks = 0.0.0.0/8 [::ffff:0.0.0.0]/104 [::1]/128
 mailbox_size_limit = 0
