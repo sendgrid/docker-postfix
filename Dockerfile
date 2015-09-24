@@ -21,7 +21,7 @@ RUN yum install -y gcc gcc-c++ kernel-devel make db4-devel
 
 ADD upgrade_postfix.sh /upgrade_postfix.sh
 
-#RUN ./upgrade_postfix.sh
+RUN ./upgrade_postfix.sh
 
 VOLUME ["/var/log","/var/spool/postfix"]
 
