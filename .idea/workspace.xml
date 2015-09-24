@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="721f199d-773f-4321-b60d-6a6be3f8a816" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cf" afterPath="$PROJECT_DIR$/main.cf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,20 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.cf" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cf" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cf">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.296296">
-              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.5823666">
+              <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.731441">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
@@ -145,8 +144,8 @@
         <option value="$PROJECT_DIR$/mailname" />
         <option value="$PROJECT_DIR$/master.cf" />
         <option value="$PROJECT_DIR$/upgrade_postfix.sh" />
-        <option value="$PROJECT_DIR$/main.cf" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/main.cf" />
       </list>
     </option>
   </component>
@@ -547,7 +546,8 @@
     <MESSAGE value="continued progress" />
     <MESSAGE value="continued progress, more&#10;" />
     <MESSAGE value="compiling postfix now... using newer version&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="compiling postfix now... using newer version&#10;" />
+    <MESSAGE value="push for ideas" />
+    <option name="LAST_COMMIT_MESSAGE" value="push for ideas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -964,18 +964,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cf">
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.296296">
-          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/main.cf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.731441">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5823666">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
           <folding />
         </state>
       </provider>
