@@ -42,13 +42,13 @@ alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
 smtpd_recipient_restrictions = permit_mynetworks, reject_unauth_destination
 # Further hostnames should be added to mail_domain table instead of here
-mydestination = mxpostfix.docker localhost.docker docker, localhost
+mydestination = mxpostfix.docker bounced.docker docker, localhost
 relayhost =
-mynetworks = 0.0.0.0/8 [::ffff:0.0.0.0]/104 [::1]/128
+mynetworks = 172.0.0.0/8 [::ffff:127.0.0.1]/104 [::1]/128
 mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = all
-content_filter=bounced:[bounced]:10027
+content_filter=bounced:[bounced.docker]:10027
 receive_override_options = no_address_mappings
 virtual_alias_maps = tcp:recipientd:10029
 message_size_limit = 204800000
