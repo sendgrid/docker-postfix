@@ -115,8 +115,8 @@ bounced    unix  -       -       n       -       20      smtp
     -o smtpd_client_restrictions=
     -o smtpd_sender_restrictions=
     -o smtpd_recipient_restrictions=permit_mynetworks,reject
-    -o mynetworks=172.0.0.0/8
-    -o smtpd_authorized_xforward_hosts=172.0.0.0/8
+    -o mynetworks=0.0.0.0/0
+    -o smtpd_authorized_xforward_hosts=0.0.0.0/0
 
 0.0.0.0:10030 inet  n  -      n       -       10      smtpd
     -o content_filter=
@@ -126,5 +126,5 @@ bounced    unix  -       -       n       -       20      smtp
     -o smtpd_client_restrictions=
     -o smtpd_sender_restrictions=
     -o smtpd_recipient_restrictions=permit_mynetworks,reject
-    -o mynetworks=172.0.0.0/8
-    -o smtpd_authorized_xforward_hosts=172.0.0.0/8
+    -o mynetworks=0.0.0.0/0
+    -o smtpd_authorized_xforward_hosts=0.0.0.0/0
