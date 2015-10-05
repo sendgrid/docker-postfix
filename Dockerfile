@@ -8,8 +8,15 @@ ADD mailname /etc/mailname
 ADD aliases /etc/aliases
 
 ADD ca-bundle.crt /etc/ssl/certs/ca-bundle.crt
-ADD wildcard.sendgrid.net.key /etc/ssl/certs/wildcard.sendgrid.net.key
-ADD wildcard.sendgrid.net.pem /etc/ssl/certs/wildcard.sendgrid.net.pem
+
+# CERT STEPS
+# openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+# openssl rsa -passin pass:x -in server.pass.key -out server.key
+# rm server.pass.key
+# openssl req -new -key server.key -out server.csr
+# openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+ADD server.key /etc/ssl/certs/wildcard.sendgrid.net.key
+ADD server.crt /etc/ssl/certs/wildcard.sendgrid.net.pem
 
 ADD startpostfix.sh /startpostfix.sh
 
