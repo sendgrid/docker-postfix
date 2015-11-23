@@ -1,0 +1,58 @@
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+
+# Debian specific:  Specifying a file name will cause the first
+# line of that file to be used as the name.  The Debian default
+# is /etc/mailname.
+#myorigin = /etc/mailname
+
+smtpd_banner = $myhostname ESMTP $mail_name
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+append_at_myorigin = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+
+readme_directory = no
+
+# TLS parameters
+
+smtpd_tls_cert_file=/etc/ssl/certs/wildcard.sendgrid.net.pem
+smtpd_tls_key_file=/etc/ssl/certs/wildcard.sendgrid.net.key
+smtpd_tls_CAfile=/etc/ssl/certs/ca-bundle.crt
+
+smtpd_use_tls=yes
+smtpd_tls_protocols = !SSLv2 !SSLv3
+smtpd_tls_ciphers = high
+smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK
+tls_preempt_cipherlist = yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
+# information on enabling SSL in the smtp client.
+
+smtpd_client_connection_count_limit = 2000
+myhostname = mxpostfix.docker
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+myorigin = /etc/mailname
+smtpd_recipient_restrictions = permit_mynetworks, reject_unauth_destination
+# Further hostnames should be added to mail_domain table instead of here
+mydestination =localhost.sendgrid.net, localhost
+relayhost =
+mynetworks = 172.0.0.0/8 [::ffff:127.0.0.1]/104 [::1]/128
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+content_filter=bounced:[bounced.docker]:10027
+receive_override_options = no_address_mappings
+virtual_alias_maps = tcp:recipientd:10029
+message_size_limit = 204800000
+
+# Permit leading hyphens in email addresses, e.g. "-bozo@example.com"
+allow_min_user = yes
+

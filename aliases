@@ -1,0 +1,8 @@
+# See man 5 aliases for format
+abuse-logfile: /tmp/abuse
+postmaster: abuse-screened, /tmp/abuse
+abuse: abuse-screened, /tmp/abuse
+abuse-screened: abuse-screened@sendgrid.com
+null: /dev/null
+root: info@sendgrid.com
+mailtest: /dev/null
