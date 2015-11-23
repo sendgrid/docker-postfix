@@ -32,4 +32,4 @@ RUN ./upgrade_postfix.sh
 
 VOLUME ["/var/log","/var/spool/postfix"]
 
-#ENTRYPOINT ["./startpostfix.sh"]
+ENTRYPOINT ["./startpostfix.sh"]
